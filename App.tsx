@@ -46,14 +46,14 @@ export default function App() {
 
   React.useEffect(() => {
     // Change this to data fetcher lib
-    if (result && result.type === 'success') {
+    if (request && result && result.type === 'success') {
       getAccessToken(
         issuer,
         config.clientId,
         clientSecret,
         result.params.code,
         redirectUri,
-        request?.codeVerifier
+        request.codeVerifier
       );
     }
   }, [request, result, redirectUri]);
